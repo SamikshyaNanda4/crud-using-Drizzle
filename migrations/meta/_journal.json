@@ -15,6 +15,13 @@
       "when": 1745393633439,
       "tag": "0001_thick_rick_jones",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1745479513246,
+      "tag": "0002_bitter_sabra",
+      "breakpoints": true
     }
   ]
 }

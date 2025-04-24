@@ -3,7 +3,7 @@
 import {eq, not, relations } from "drizzle-orm"
 import { revalidatePath } from "next/cache";
 import {db} from "@/db/drizzle"
-import { tasks } from "@/db/schema";
+import { questions, tasks } from "@/db/schema";
 
 
 //GETDATA of the tasks-------------------------------------
@@ -84,3 +84,22 @@ export const edittasks=async (id:number,text:string)=>{
 }
 
 //DELETE ALL THE tasks---- pending
+
+
+export const addQuestions=async(title:string,
+                                description:string,
+                                difficulty:string,
+                                tags:string[]|any) =>{
+                                  try {
+                                    await db.insert(questions).values({
+                                      title: title,
+                                      description: description,
+                                      difficulty: difficulty,
+                                      tags: tags,
+                                    });
+                                    return { success: true }; // Optional: Return success status
+                                  } catch (error) {
+                                    console.error("Error adding question:", error);
+                                    return { success: false, error }; // Optional: Return error
+                                  }
+}
