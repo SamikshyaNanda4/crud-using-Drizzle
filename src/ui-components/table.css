@@ -1,0 +1,40 @@
+/* Custom Table Styling */
+.table-neon {
+    background-color: #0d0d0d; /* Dark base */
+    color: #e0f7fa; /* Neon text */
+    border-collapse: collapse;
+  }
+  
+  .table-neon thead {
+    background-color: #1a1a1a;
+    color: #00ffff; /* Neon cyan headers */
+  }
+  
+  .table-neon tbody tr {
+    background-color: #121212;
+    transition: background-color 0.3s ease;
+  }
+  
+  .table-neon tbody tr:hover {
+    background-color: #1f1f1f;
+  }
+  
+  .table-neon td,
+  .table-neon th {
+    padding: 12px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: left;
+    vertical-align: top;
+  }
+  
+  /* Optional glow text */
+  .table-neon td,
+  .table-neon th {
+    text-shadow: 0 0 4px rgba(0, 255, 255, 0.6);
+  }
+  
+  /* Optional highlight row border on hover */
+  .table-neon tbody tr:hover td {
+    border-color: #00ffff;
+  }
+  

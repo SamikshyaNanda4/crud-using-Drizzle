@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { addQuestions } from "@/actions/todoAction";
 import {Loader2,Send} from 'lucide-react';
+import Link from "next/link";
 const Icons = {
     spinner: Loader2,
   };
@@ -21,7 +22,6 @@ import {
     FormLabel,
     FormMessage
 } from "@/components/ui/form"
-import { boolean } from "drizzle-orm/gel-core";
 
 
 export const questionFormSchema = z.object({
@@ -161,6 +161,7 @@ export function QuestionForm(){
                   )}
                 />
           
+          <div className="flex w-full justify-between">
           <Button type="submit" className="cursor-pointer flex items-center gap-2">
   { loading ? (
     <>
@@ -174,6 +175,12 @@ export function QuestionForm(){
     </>
   )}
 </Button>
+<Link href="/questions">
+<Button className="cursor-pointer">
+   ALL QUESTIONS
+</Button>
+</Link>
+          </div>
                 
               </form>
             </Form>

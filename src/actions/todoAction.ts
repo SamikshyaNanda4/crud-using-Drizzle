@@ -4,6 +4,7 @@ import {eq, not, relations } from "drizzle-orm"
 import { revalidatePath } from "next/cache";
 import {db} from "@/db/drizzle"
 import { questions, tasks } from "@/db/schema";
+import { date } from "drizzle-orm/mysql-core";
 
 
 //GETDATA of the tasks-------------------------------------
@@ -102,4 +103,14 @@ export const addQuestions=async(title:string,
                                     console.error("Error adding question:", error);
                                     return { success: false, error }; // Optional: Return error
                                   }
+}
+
+export const getQuestions=async()=>{
+  try{
+   const data= await db.select().from(questions)
+    return data;
+  }catch(error){
+    console.error("Error fetching Questions")
+    return {success:false,error:error}
+  }
 }
